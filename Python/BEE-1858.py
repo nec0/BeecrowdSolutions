@@ -1,18 +1,18 @@
 while True:
     try:
         quantidadeNomes = int(input())
-        nomesProvavelAlgoz = input().split(" ")
-        menorProvavelAlgoz = 0
-        posicaoAlgoz = 0
+        nomesAlgoz = input().split(" ")
+        menorAlgoz = nomesAlgoz[0]
+        posicaoAlgoz = 1
 
         i = 0
         while i < quantidadeNomes:
-            if int(nomesProvavelAlgoz[i]) <= int(menorChute):
-                menorChute = nomesProvavelAlgoz[i]
-                posicaoMenorChute = i
+            if int(nomesAlgoz[i]) < int(menorAlgoz):
+                menorAlgoz = nomesAlgoz[i]
+                posicaoAlgoz = i + 1
             i += 1
 
-        print(posicaoMenorChute + 1)
+        print(posicaoAlgoz)
 
     except EOFError:
         break
